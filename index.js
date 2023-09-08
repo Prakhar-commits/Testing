@@ -40,8 +40,7 @@ app.get("/bfhl", (req, res) => {
   });
 });
 
-app.listen(3000, confirmation(3000));
-
-function confirmation(port) {
-  console.log(`server is running on ${port} `);
-}
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
